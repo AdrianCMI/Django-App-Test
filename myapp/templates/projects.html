@@ -1,0 +1,16 @@
+{% extends 'layout/base.html' %}
+{% block content %}
+<h1>Projects</h1>
+
+{% for project in projects %}
+<div>
+    <h2> {% if project.done %}✅ {% else %} 🕑 {% endif %}
+        Projecto: {{ project.id }}</h2>
+    <p>Nombre: {{ project.name }}</p>
+    <p>Descripción: {{ project.description }}</p>
+    <button>Delete</button>
+    <button>Edit</button>
+    <button>✅ Done</button>
+</div>
+{% endfor %}
+{% endblock %}
